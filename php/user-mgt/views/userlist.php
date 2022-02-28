@@ -20,26 +20,31 @@
 				<td>PASSWORD</td>
 				<td>ACTION</td>
 			</tr>
+
+			<?php 
+				$file = fopen('..models/user.txt', 'r');
+				
+				while (!feof($file)) {
+					$user = fgets($file);
+					$userArray = explode("|", $user);
+			?>
+
 			<tr>
-				<td>1</td>
-				<td>Alamin</td>
-				<td>alamin@aiub.edu</td>
-				<td>123</td>
+				<td><?=$userArray[0]?></td>
+				<td><?=$userArray[1]?></td>
+				<td><?=$userArray[2]?></td>
+				<td><?=$userArray[3]?></td>
 				<td>
-					<a href="edit.php"> EDIT </a> | 
-					<a href="delete.php"> DELETE </a>  
+					<a href="edit.php?id=<?=$userArray[0]?>"> EDIT </a> | 
+					<a href="delete.php?id=<?=$userArray[0]?>"> DELETE </a>  
 				</td>
 			</tr>
-			<tr>
-				<td>2</td>
-				<td>XYZ</td>
-				<td>abc@aiub.edu</td>
-				<td>123</td>
-				<td>
-					<a href="edit.php"> EDIT </a> | 
-					<a href="delete.php"> DELETE </a>  
-				</td>
-			</tr>
+
+			<?php
+				}
+			?>
+			
+			
 			
 		</table>
 		</fieldset>
