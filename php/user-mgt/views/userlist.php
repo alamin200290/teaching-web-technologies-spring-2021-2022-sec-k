@@ -22,10 +22,14 @@
 			</tr>
 
 			<?php 
-				$file = fopen('..models/user.txt', 'r');
+				$file = fopen('../models/user.txt', 'r');
 				
 				while (!feof($file)) {
 					$user = fgets($file);
+					if($user == null){
+						break;
+					}
+					
 					$userArray = explode("|", $user);
 			?>
 

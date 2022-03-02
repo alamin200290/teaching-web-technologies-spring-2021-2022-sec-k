@@ -15,7 +15,7 @@
 				$user = fgets($file);
 				$userArry = explode('|', $user);
 				
-				if(trim($userArry[0]) == $username && trim($userArry[1]) == $password){
+				if(trim($userArry[1]) == $username && trim($userArry[2]) == $password){
 					$_SESSION['status'] = true;
 					$_SESSION['current_user'] = $userArry;
 					setcookie('status', 'true', time()+3600, '/');
