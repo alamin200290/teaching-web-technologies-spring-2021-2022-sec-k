@@ -1,5 +1,19 @@
 <?php 
 
+	
+	//print_r($_REQUEST);
+
+	if(isset($_REQUEST['submit'])){
+		
+		if($_REQUEST['username'] == null){
+			echo "username is empty....";
+		}else{
+			echo "success";
+		}
+	}else{
+		echo "invalid request...";
+	}
+
 	//print("Hello world!...");
 	//echo "hello World..."." Test...";
 
@@ -45,7 +59,7 @@
 		
 	}*/
 
-	$students = [
+	/*$students = [
 					's1'=>['id'=>1, 'name'=>'alamin', 'cgpa'=>3.4, 'email'=>'alamin@aiub.edu'],
 					's2'=>['id'=>2, 'name'=>'xyz', 'cgpa'=>3.5, 'email'=>'xyz@aiub.edu'],
 					's3'=>['id'=>3, 'name'=>'abc', 'cgpa'=>3.6, 'email'=>'abc@aiub.edu'],
@@ -54,5 +68,7 @@
 
 	foreach ($students as $s) {
 		echo "<h1>".$s['name']."</h1>";
-	}
+	}*/
+
+
 ?>
