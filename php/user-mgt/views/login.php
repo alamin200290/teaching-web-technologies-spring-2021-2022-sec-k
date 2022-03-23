@@ -1,3 +1,15 @@
+<?php 
+
+	$error = "";
+	
+	if(isset($_GET['msg'])){
+		if($_GET['msg'] == 'error'){
+			$error = "invalid username/password";
+		}
+	}
+
+?>
+
 <html>
 <head>
 	<title>Login</title>
@@ -15,7 +27,12 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" name="submit" value="Submit"></td>
+				<td>
+					<input type="submit" name="submit" value="Submit">
+					<a href="reg.php">Signup</a>
+					<br>
+					<?=$error?>
+				</td>
 			</tr>
 		</table>
 	</form>
